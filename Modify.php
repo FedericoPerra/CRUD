@@ -10,7 +10,10 @@
 </head>
 <body>
 <form method="post" action="Update.php">
+    <br>
+        <div class="container col-xs-8 col-lg-3">
     <input type="hidden" name="id" value="<?php echo $_POST['identification']?>">
+    <div class="form-group">
         <label for="nm">Nome:</label>
         <input type="text" class="form-control" name="name" id="nm" value="<?php echo $_POST['name']?>">
     </div>
@@ -26,6 +29,7 @@
         <label for="up">UPDATE:</label>
         <input type="submit" class="form-control" id="up"">
     </div>
+</div>
 </form>
 </body>
 </html>

@@ -10,21 +10,24 @@
 </head>
 <body>
 <form method="post" action="addRecord.php">
-    <div class="form-group">
-        <label for="nm">Nome:</label>
-        <input type="text" class="form-control" name="name" id="nm">
-    </div>
-    <div class="form-group">
-        <label for="cnm">Cognome:</label>
-        <input type="text" class="form-control" name="surname" id="cnm">
-    </div>
-    <div class="form-group">
-        <label for="mail">Email:</label>
-        <input type="email" class="form-control" name="Email" id="mail">
-    </div>
-    <div class="form-group">
-        <label for="insert">INSERT:</label>
-        <input type="submit" class="form-control" id="insert">
+    <br>
+    <div class="container col-xs-8 col-lg-3">
+        <div class="form-group">
+            <label for="nm">Nome:</label>
+            <input type="text" class="form-control" name="name" id="nm">
+        </div>
+        <div class="form-group">
+            <label for="cnm">Cognome:</label>
+            <input type="text" class="form-control" name="surname" id="cnm">
+        </div>
+        <div class="form-group">
+            <label for="mail">Email:</label>
+            <input type="email" class="form-control" name="Email" id="mail">
+        </div>
+        <div class="form-group">
+            <label for="insert">INSERT:</label>
+            <input type="submit" class="form-control" id="insert">
+        </div>
     </div>
 </form>
 </body>
