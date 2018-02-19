@@ -15,15 +15,15 @@
     <input type="hidden" name="id" value="<?php echo $_POST['identification']?>">
     <div class="form-group">
         <label for="nm">Nome:</label>
-        <input type="text" class="form-control" name="name" id="nm" value="<?php echo $_POST['name']?>">
+        <input type="text" class="form-control" name="name" id="nm" value="<?php echo $_POST['name']?>" required>
     </div>
     <div class="form-group">
         <label for="cnm">Cognome:</label>
-        <input type="text" class="form-control" name="surname" id="cnm" value="<?php echo $_POST['surname']?>">
+        <input type="text" class="form-control" name="surname" id="cnm" value="<?php echo $_POST['surname']?>" required>
     </div>
     <div class="form-group">
         <label for="mail">Email:</label>
-        <input type="email" class="form-control" name="Email" id="mail" value="<?php echo $_POST['email']?>">
+        <input type="email" class="form-control" name="Email" id="mail" value="<?php echo $_POST['email']?>" required>
     </div>
     <div class="form-group">
         <label for="up">UPDATE:</label>

@@ -14,15 +14,15 @@
     <div class="container col-xs-8 col-lg-3">
         <div class="form-group">
             <label for="nm">Nome:</label>
-            <input type="text" class="form-control" name="name" id="nm">
+            <input type="text" class="form-control" name="name" id="nm" required>
         </div>
         <div class="form-group">
             <label for="cnm">Cognome:</label>
-            <input type="text" class="form-control" name="surname" id="cnm">
+            <input type="text" class="form-control" name="surname" id="cnm" required>
         </div>
         <div class="form-group">
             <label for="mail">Email:</label>
-            <input type="email" class="form-control" name="Email" id="mail">
+            <input type="email" class="form-control" name="Email" id="mail" required>
         </div>
         <div class="form-group">
             <label for="insert">INSERT:</label>

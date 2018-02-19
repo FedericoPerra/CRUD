@@ -1,8 +1,8 @@
 <?php
 include("config.php");
-$nome=$_POST['name'];
-$cognome=$_POST['surname'];
-$email=$_POST['Email'];
+$nome=htmlentities(mysqli_escape_string($conn,$_POST['name']));
+$cognome=htmlentities(mysqli_escape_string($conn,$_POST['surname']));
+$email=htmlentities(mysqli_escape_string($conn,$_POST['Email']));
 
 $sql = "INSERT INTO credenziali (Nome, Cognome, Email) VALUES ('$nome','$cognome','$email')";
 
