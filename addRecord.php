@@ -1,26 +1,3 @@
-<?php
-include("config.php");
-$nome=htmlentities(mysqli_escape_string($conn,$_POST['name']));
-$cognome=htmlentities(mysqli_escape_string($conn,$_POST['surname']));
-$email=htmlentities(mysqli_escape_string($conn,$_POST['Email']));
-
-if (!('$email')) {
-    echo 'Email inesistente';
-}
-else {
-    echo 'Email valida';
-    $sql = "INSERT INTO credenziali (Nome, Cognome, Email) VALUES ('$nome','$cognome','$email')";
-
-    if ($conn->query($sql) === TRUE) {
-        echo "<h2>New record created successfully</h2>";
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
-    }
-}
-
-$conn->close();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,14 +9,48 @@ $conn->close();
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<form method="post" action="index.php">
-    <br>
+<form method="post" action="">
+    <div class="page-header">
+        <h2>Aggiungi un record:</h2>
+    </div>
     <div class="container col-xs-8 col-lg-3">
         <div class="form-group">
-            <label for="insert">Ritorna all'HOME PAGE:</label>
+            <label for="nm">Nome:</label>
+            <input type="text" class="form-control" name="name" id="nm" required>
+        </div>
+        <div class="form-group">
+            <label for="cnm">Cognome:</label>
+            <input type="text" class="form-control" name="surname" id="cnm" required>
+        </div>
+        <div class="form-group">
+            <label for="mail">Email:</label>
+            <input type="email" class="form-control" name="Email" id="mail" required>
+        </div>
+        <div class="form-group">
+            <label for="insert">INSERISCI:</label>
             <input type="submit" class="form-control" id="insert">
         </div>
     </div>
 </form>
 </body>
 </html>
+
+<?php
+include("config.php");
+if(isSet($_POST['name'])&&isSet($_POST['surname'])&&isSet($_POST['Email'])) {
+    $nome = htmlentities(mysqli_escape_string($conn, $_POST['name']));
+    $cognome = htmlentities(mysqli_escape_string($conn, $_POST['surname']));
+    $email = htmlentities(mysqli_escape_string($conn, $_POST['Email']));
+
+    $sql = "INSERT INTO credenziali (Nome, Cognome, Email) VALUES ('$nome','$cognome','$email')";
+
+    if ($conn->query($sql) == TRUE) {
+        echo "<h2>New record created successfully</h2>";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+
+    $conn->close();
+    header('Location: http://localhost/tabellaCRUD/CRUD/index.php');
+}
+?>

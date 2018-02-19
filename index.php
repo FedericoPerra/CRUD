@@ -9,12 +9,12 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<form method="post" action="addRecordMenu.php">
+<form method="post" action="addRecord.php">
 <div class="page-header text-center">
     <h2>Tabella CRUD con libreria bootstrap</h2>
 </div>
 <div class="container">
-    <h1 id="button"><button type="submit" class="btn success" formaction="addRecordMenu.php">Aggiungi un record</button></h1>
+    <h1 id="button"><button type="submit" class="btn success" formaction="addRecord.php">Aggiungi un record</button></h1>
     <table class="table table-hover">
         <tr>
             <th>id</th>
@@ -40,7 +40,7 @@ if ($result->num_rows > 0) {
         $nome=$row['Nome'];
         $cognome=$row['Cognome'];
         $email=$row['Email'];
-        echo "<form action='Modify.php' method='post'>";
+        echo "<form action='Update.php' method='post'>";
         echo "<input type='hidden' name='identification' value=$riga>";
         echo "<input type='hidden' name='name' value=$nome>";
         echo "<input type='hidden' name='surname' value=$cognome>";
