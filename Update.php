@@ -1,9 +1,9 @@
 <?php
 include("config.php");
 
-$nome=$_POST['name'];
-$cognome=$_POST['surname'];
-$email=$_POST['Email'];
+$nome=htmlentities(mysqli_escape_string($conn,$_POST['name']));
+$cognome=htmlentities(mysqli_escape_string($conn,$_POST['surname']));
+$email=htmlentities(mysqli_escape_string($conn,$_POST['Email']));
 $id=$_POST['id'];
 
 $sql = "UPDATE credenziali SET Nome='$nome', Cognome='$cognome', Email='$email' WHERE id='$id'";
