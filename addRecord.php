@@ -4,12 +4,18 @@ $nome=htmlentities(mysqli_escape_string($conn,$_POST['name']));
 $cognome=htmlentities(mysqli_escape_string($conn,$_POST['surname']));
 $email=htmlentities(mysqli_escape_string($conn,$_POST['Email']));
 
-$sql = "INSERT INTO credenziali (Nome, Cognome, Email) VALUES ('$nome','$cognome','$email')";
+if (!('$email')) {
+    echo 'Email inesistente';
+}
+else {
+    echo 'Email valida';
+    $sql = "INSERT INTO credenziali (Nome, Cognome, Email) VALUES ('$nome','$cognome','$email')";
 
-if ($conn->query($sql) === TRUE) {
-    echo "<h2>New record created successfully</h2>";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    if ($conn->query($sql) === TRUE) {
+        echo "<h2>New record created successfully</h2>";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
 }
 
 $conn->close();
