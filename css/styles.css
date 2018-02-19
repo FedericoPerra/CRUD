@@ -1,16 +1,14 @@
-.col1
-{
-    background: mediumseagreen;
+.btn{
+    border-radius: 5px;
+    border: none;
+    color: white;
+    padding: 18px 20px;
+    font-size: 16px;
 }
-.col2
-{
-    background: brown;
+#button{
+    text-align:right;
 }
-.col3
-{
-    background: #e38d13;
-}
-.col4
-{
-    background: #66afe9;
-}
+.success {background-color: #4CAF50;} /* Green */
+.success:hover {background-color: #46a049;}
+
+.page-header{ height: 50px;}

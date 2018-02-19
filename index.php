@@ -3,24 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 <form method="post" action="addRecordMenu.php">
-<h3 align="center">Tabella CRUD con libreria bootstrap</h3>
+<div class="page-header text-center">
+    <h2>Tabella CRUD con libreria bootstrap</h2>
+</div>
 <div class="container">
-    <h1 id="button"><button type="submit" class="btn success" formaction="addRecordMenu.php">Add new record</button></h1>
+    <h1 id="button"><button type="submit" class="btn success" formaction="addRecordMenu.php">Aggiungi un record</button></h1>
     <table class="table table-hover">
         <tr>
             <th>id</th>
             <th>Nome</th>
             <th>Cognome</th>
             <th>Email</th>
-            <th>Update</th>
-            <th>Delete</th>
+            <th>Aggiorna</th>
+            <th>Elimina</th>
         </tr>
     </div>
 </form>
@@ -48,11 +50,11 @@ if ($result->num_rows > 0) {
         echo "<td>".$row['Nome']."</td>";
         echo "<td>".$row['Cognome']."</td>";
         echo "<td>".$row['Email']."</td>";
-        echo "<td><button type=\"submit\" class=\"btn btn-primary\" name='btnUpdate'>Update</button></td>";
+        echo "<td><button type=\"submit\" class=\"btn btn-primary\" name='btnUpdate'>Aggiorna</button></td>";
         echo"</form>";
         echo "<form action='Delete.php' method='post'>";
         echo "<input type='hidden' name='identification' value=$riga>";
-        echo "<td><button type=\"submit\" class=\"btn btn-danger\" name='btnDelete'>Delete</button></td>";
+        echo "<td><button type=\"submit\" class=\"btn btn-danger\" name='btnDelete'>Elimina</button></td>";
         echo "</form>";
         echo "</tr>";
     }
