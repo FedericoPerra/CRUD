@@ -24,7 +24,7 @@
         </div>
         <div class="form-group">
             <label for="mail">Email:</label>
-            <input type="email" class="form-control" name="Email" id="mail" required>
+            <input type="email" class="form-control" name="Email" id="mail">
         </div>
         <div class="form-group">
             <label for="insert">INSERISCI:</label>
@@ -36,21 +36,37 @@
 </html>
 
 <?php
-include("config.php");
 if(isSet($_POST['name'])&&isSet($_POST['surname'])&&isSet($_POST['Email'])) {
-    $nome = htmlentities(mysqli_escape_string($conn, $_POST['name']));
-    $cognome = htmlentities(mysqli_escape_string($conn, $_POST['surname']));
-    $email = htmlentities(mysqli_escape_string($conn, $_POST['Email']));
+    if(isValidEmail($_POST['Email'])) {
+        include("config.php");
+        $nome = htmlentities(mysqli_escape_string($conn, $_POST['name']));
+        $cognome = htmlentities(mysqli_escape_string($conn, $_POST['surname']));
+        $email = htmlentities(mysqli_escape_string($conn, $_POST['Email']));
 
-    $sql = "INSERT INTO credenziali (Nome, Cognome, Email) VALUES ('$nome','$cognome','$email')";
+        $sql = "INSERT INTO credenziali (Nome, Cognome, Email) VALUES ('$nome','$cognome','$email')";
 
-    if ($conn->query($sql) == TRUE) {
-        echo "<h2>New record created successfully</h2>";
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        if ($conn->query($sql) == TRUE) {
+            echo "<h2>New record created successfully</h2>";
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
+
+        $conn->close();
+        header('Location: http://localhost/tabellaCRUD/CRUD/index.php');
     }
+    else{
+        echo "<h2>Email non corretta</h2>";
+    }
+}
 
-    $conn->close();
-    header('Location: http://localhost/tabellaCRUD/CRUD/index.php');
+function isValidEmail($email){
+    $pattern = "^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$";
+
+    if (eregi($pattern, $email)){
+        return true;
+    }
+    else {
+        return false;
+    }
 }
 ?>
