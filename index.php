@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script language="JavaScript" type="text/JavaScript" src="scripts/Sorter.js"></script>
     <script language="JavaScript" type="text/JavaScript" src="scripts/Research.js"></script>
+    <script language="JavaScript" type="text/JavaScript" src="scripts/CreateTable.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body onload="Create();">
 <form method="post" action="addRecord.php">
 <div class="page-header text-center">
     <h2>Tabella CRUD con libreria bootstrap</h2>
