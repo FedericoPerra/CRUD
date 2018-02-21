@@ -1,6 +1,6 @@
 function Ricerca()
 {
-    reset();
+    Reset();
     var stringa = document.getElementById("research").value;
     if(stringa!="") {
         var table = document.getElementById("id_table");
@@ -13,7 +13,7 @@ function Ricerca()
     }
 }
 
-function reset() {
+function Reset() {
     var table = document.getElementById("id_table");
     var celle = table.getElementsByTagName("td");
     for(var j=0; j<celle.length; j++){

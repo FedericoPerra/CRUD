@@ -41,18 +41,23 @@ if(isSet($_POST['name'])&&isSet($_POST['surname'])&&isSet($_POST['Email'])) {
         include("config.php");
         $nome = htmlentities(mysqli_escape_string($conn, $_POST['name']));
         $cognome = htmlentities(mysqli_escape_string($conn, $_POST['surname']));
-        $email = htmlentities(mysqli_escape_string($conn, $_POST['Email']));
+        if (!isValidWord($nome)&&!isValidWord($cognome)) {
+            $email = htmlentities(mysqli_escape_string($conn, $_POST['Email']));
 
-        $sql = "INSERT INTO credenziali (Nome, Cognome, Email) VALUES ('$nome','$cognome','$email')";
+            $sql = "INSERT INTO credenziali (Nome, Cognome, Email) VALUES ('$nome','$cognome','$email')";
 
-        if ($conn->query($sql) == TRUE) {
-            echo "<h2>New record created successfully</h2>";
-        } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
+            if ($conn->query($sql) == TRUE) {
+                echo "<h2>New record created successfully</h2>";
+            } else {
+                echo "Error: " . $sql . "<br>" . $conn->error;
+            }
+
+            $conn->close();
+            header('Location: http://localhost/tabellaCRUD/CRUD/index.php');
         }
-
-        $conn->close();
-        header('Location: http://localhost/tabellaCRUD/CRUD/index.php');
+        else{
+            echo "Il nome e il cognome non possono contenere caratteri speciali";
+        }
     }
     else{
         echo "<h2>Email non corretta</h2>";
@@ -69,4 +74,18 @@ function isValidEmail($email){
         return false;
     }
 }
+
+function isValidWord($word){
+    $pattern = "/^[a-zA-Z\s]/";
+
+    if (eregi($pattern, $word)){
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
 ?>
+
+

@@ -5,15 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script language="JavaScript" type="text/JavaScript" src="scripts/Sorter.js"></script>
     <script language="JavaScript" type="text/JavaScript" src="scripts/Research.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<form>
-    <input type="text" id="research">
-    <input type="button" name="ricerca" value="cerca" onclick="Ricerca();">
-</form>
 <form method="post" action="addRecord.php">
 <div class="page-header text-center">
     <h2>Tabella CRUD con libreria bootstrap</h2>
@@ -23,13 +20,12 @@
     <table class="table table-hover" id="id_table">
         <tr>
             <th>id</th>
-            <th>Nome</th>
-            <th>Cognome</th>
-            <th>Email</th>
+            <th onclick="sorting(1);">Nome</th>
+            <th onclick="sorting(2);">Cognome</th>
+            <th onclick="sorting(3);">Email</th>
             <th>Aggiorna</th>
             <th>Elimina</th>
         </tr>
-    </div>
 </form>
 
 <?php
@@ -52,9 +48,9 @@ if ($result->num_rows > 0) {
         echo "<input type='hidden' name='email' value=$email>";
         echo "<tr>";
         echo "<td>".$row['id']."</td>";
-        echo "<td>".$row['Nome']."</td>";
-        echo "<td>".$row['Cognome']."</td>";
-        echo "<td>".$row['Email']."</td>";
+        echo "<td onclick='sorting(1);'>".$row['Nome']."</td>";
+        echo "<td onclick='sorting(2);'>".$row['Cognome']."</td>";
+        echo "<td onclick='sorting(3);'>".$row['Email']."</td>";
         echo "<td><button type=\"submit\" class=\"btn btn-primary\" name='btnUpdate'>Aggiorna</button></td>";
         echo"</form>";
         echo "<form action='Delete.php' method='post'>";
@@ -64,8 +60,15 @@ if ($result->num_rows > 0) {
         echo "</tr>";
     }
 }
-echo "</table>";
-echo "</body>";
+echo "
+</table>
+<br>
+<div class='form-group'>
+    <label for='research'>Cerca:</label>
+    <input type='text' id='research' class='form-control' onkeyup='Ricerca();'>
+</div>   
+</body>
+</html>";
 
 $conn->close();
 
