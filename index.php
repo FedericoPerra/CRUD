@@ -35,7 +35,7 @@
         <h1 id="button"><button type="submit" class="btn success" data-toggle="tooltip" data-placement='bottom' title="premi il bottone per aggiungere un record"><span class="glyphicon glyphicon-plus"></span> Aggiungi un record</button></h1>
         <span class="glyphicon glyphicon-info-sign" onmouseover="Info();" onmouseout="ResetInfo();"></span>
         <br>
-        <p class="alert alert-info" id="info" style="visibility: hidden"></p>
+        <p class="alert alert-info" id="info" style="visibility: hidden;"></p>
         <table class="table table-hover" id="id_table">
             <tr>
                 <th>id</th>

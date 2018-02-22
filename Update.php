@@ -19,31 +19,34 @@ if(isSet($_POST['identification'])&&isSet($_POST['name'])&&isSet($_POST['surname
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<form method="post" action="">
     <div class="page-header text-center">
         <h2>Modifica il record:</h2>
     </div>
     <br>
     <div class="container col-xs-8 col-lg-3">
-        <input type="hidden" name="id" value="<?php echo $_SESSION['id'];?>">
-        <div class="form-group">
-            <label for="nm">Nome:</label>
-            <input type="text" class="form-control" name="name" id="nm" value="<?php echo $_SESSION['nome'];?>" required>
-        </div>
-        <div class="form-group">
-            <label for="cnm">Cognome:</label>
-            <input type="text" class="form-control" name="surname" id="cnm" value="<?php echo $_SESSION['cognome'];?>" required>
-        </div>
-        <div class="form-group">
-            <label for="mail">Email:</label>
-            <input type="email" class="form-control" name="Email" id="mail" value="<?php echo $_SESSION['mail'];?>">
-        </div>
-        <div class="form-group">
-            <label for="up">AGGIORNA:</label>
-            <input type="submit" class="form-control" id="up">
-        </div>
+        <form method="post" action="">
+            <input type="hidden" name="id" value="<?php echo $_SESSION['id'];?>">
+            <div class="form-group">
+                <label for="nm">Nome:</label>
+                <input type="text" class="form-control" name="name" id="nm" value="<?php echo $_SESSION['nome'];?>" required>
+            </div>
+            <div class="form-group">
+                <label for="cnm">Cognome:</label>
+                <input type="text" class="form-control" name="surname" id="cnm" value="<?php echo $_SESSION['cognome'];?>" required>
+            </div>
+            <div class="form-group">
+                <label for="mail">Email:</label>
+                <input type="email" class="form-control" name="Email" id="mail" value="<?php echo $_SESSION['mail'];?>">
+            </div>
+            <div class="form-group">
+                <label for="up">AGGIORNA:</label>
+                <input type="submit" class="form-control" id="up">
+            </div>
+        </form>
+        <form action="index.php">
+            <button type="submit" class="btn btn-danger" name='btnAnnulla' data-toggle='tooltip' data-placement='bottom' title='premi per annullare'><span class="glyphicon glyphicon-remove"> Annulla</button>
+        </form>
     </div>
-</form>
 </body>
 </html>
 

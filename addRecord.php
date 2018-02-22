@@ -9,29 +9,32 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<form method="post" action="">
     <div class="page-header">
         <h2>Aggiungi un record:</h2>
     </div>
     <div class="container col-xs-8 col-lg-3">
-        <div class="form-group">
-            <label for="nm">Nome:</label>
-            <input type="text" class="form-control" name="name" id="nm" required>
-        </div>
-        <div class="form-group">
-            <label for="cnm">Cognome:</label>
-            <input type="text" class="form-control" name="surname" id="cnm" required>
-        </div>
-        <div class="form-group">
-            <label for="mail">Email:</label>
-            <input type="email" class="form-control" name="Email" id="mail">
-        </div>
-        <div class="form-group">
-            <label for="insert">INSERISCI:</label>
-            <input type="submit" class="form-control" id="insert">
-        </div>
+        <form method="post" action="">
+            <div class="form-group">
+                <label for="nm">Nome:</label>
+                <input type="text" class="form-control" name="name" id="nm" required>
+            </div>
+            <div class="form-group">
+                <label for="cnm">Cognome:</label>
+                <input type="text" class="form-control" name="surname" id="cnm" required>
+            </div>
+            <div class="form-group">
+                <label for="mail">Email:</label>
+                <input type="email" class="form-control" name="Email" id="mail">
+            </div>
+            <div class="form-group">
+                <label for="insert">INSERISCI:</label>
+                <input type="submit" class="form-control" id="insert">
+            </div>
+        </form>
+        <form action="index.php">
+            <button type="submit" class="btn btn-danger" name='btnAnnulla' data-toggle='tooltip' data-placement='bottom' title='premi per annullare'><span class="glyphicon glyphicon-remove"> Annulla</button>
+        </form>
     </div>
-</form>
 </body>
 </html>
 
