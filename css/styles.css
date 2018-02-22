@@ -8,7 +8,7 @@
 #button{
     text-align:right;
 }
-.success {background-color: #4CAF50;} /* Green */
+.success {background-color: #4CAF50;}
 .success:hover {background-color: #46a049;}
 
 .page-header{ height: 50px;}

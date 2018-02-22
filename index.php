@@ -22,9 +22,10 @@
             <div class="navbar-header">
                 <a class="navbar-brand">TabellaCRUD</a>
             </div>
-            <ul class="nav navbar-nav navbar-right">
-                <div class="form-group">
-                    <input type='text' id='research' class='form-control' onkeyup='Ricerca();' placeholder='cerca'></li>
+            <ul class="nav navbar-form navbar-right col-lg-3">
+                <div class="form-group has-feedback">
+                    <input type='text' id='research' class='form-control' onkeyup='Ricerca();' placeholder='cerca'>
+                    <i class="glyphicon glyphicon-search form-control-feedback"></i>
                 </div>
             </ul>
         </div>

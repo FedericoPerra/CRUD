@@ -11,7 +11,7 @@ function Ricerca()
             }
         }
     }
-}
+}h
 
 function Reset() {
     var table = document.getElementById("id_table");
