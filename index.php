@@ -5,19 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script language="JavaScript" type="text/JavaScript" src="scripts/Sorter.js"></script>
-    <script language="JavaScript" type="text/JavaScript" src="scripts/Research.js"></script>
-    <script language="JavaScript" type="text/JavaScript" src="scripts/CreateTable.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script language="JavaScript" type="text/JavaScript" src="scripts/Sorter.js"></script>
+    <script language="JavaScript" type="text/JavaScript" src="scripts/Research.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
 </head>
-<body onload="Create();">
+<body>
 <form method="post" action="addRecord.php">
-<div class="page-header text-center">
-    <h2>Tabella CRUD con libreria bootstrap</h2>
-</div>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand">TabellaCRUD</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <div class="form-group">
+                    <input type='text' id='research' class='form-control' onkeyup='Ricerca();' placeholder='cerca'></li>
+                </div>
+            </ul>
+        </div>
+    </nav>
 <div class="container">
-    <h1 id="button"><button type="submit" class="btn success" formaction="addRecord.php">Aggiungi un record</button></h1>
+    <h1 id="button"><button type="submit" class="btn success" data-toggle="tooltip" data-placement='bottom' title="premi il bottone per aggiungere un record"><span class="glyphicon glyphicon-plus"></span> Aggiungi un record</button></h1>
+    <br>
     <table class="table table-hover" id="id_table">
         <tr>
             <th>id</th>
@@ -52,22 +66,19 @@ if ($result->num_rows > 0) {
         echo "<td onclick='sorting(1);'>".$row['Nome']."</td>";
         echo "<td onclick='sorting(2);'>".$row['Cognome']."</td>";
         echo "<td onclick='sorting(3);'>".$row['Email']."</td>";
-        echo "<td><button type=\"submit\" class=\"btn btn-primary\" name='btnUpdate'>Aggiorna</button></td>";
+        echo "<td><button type=\"submit\" class=\"btn btn-primary\" name='btnUpdate' data-toggle='tooltip' data-placement='bottom' title='premi il bottone per aggiornare il record'><span class=\"glyphicon glyphicon-pencil\"></span> Aggiorna</button></td>";
         echo"</form>";
         echo "<form action='Delete.php' method='post'>";
         echo "<input type='hidden' name='identification' value=$riga>";
-        echo "<td><button type=\"submit\" class=\"btn btn-danger\" name='btnDelete'>Elimina</button></td>";
+        echo "<td><button type=\"submit\" class=\"btn btn-danger\" name='btnDelete' data-toggle='tooltip' data-placement='bottom' title='premi il bottone per eliminare il record'><span class=\"glyphicon glyphicon-remove\"></span> Elimina</button></td>";
         echo "</form>";
         echo "</tr>";
     }
 }
+$control=false;
 echo "
 </table>
-<br>
-<div class='form-group'>
-    <label for='research'>Cerca:</label>
-    <input type='text' id='research' class='form-control' onkeyup='Ricerca();'>
-</div>   
+</div>
 </body>
 </html>";
 

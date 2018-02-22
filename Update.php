@@ -61,7 +61,7 @@ if(isSet($_POST['name'])&&isSet($_POST['surname'])&&isSet($_POST['Email'])) {
 
             if ($conn->query($sql) == TRUE) {
                 echo "Record updated successfully";
-                header('Location: http://localhost/tabellaCRUD/CRUD/index.php');
+                header('location:index.php');
             } else {
                 echo "Error updating record: " . $conn->error;
             }

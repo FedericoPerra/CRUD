@@ -53,7 +53,7 @@ if(isSet($_POST['name'])&&isSet($_POST['surname'])&&isSet($_POST['Email'])) {
             }
 
             $conn->close();
-            header('Location: http://localhost/tabellaCRUD/CRUD/index.php');
+            header('location:index.php');
         }
         else{
             echo "Il nome e il cognome non possono contenere caratteri speciali";
