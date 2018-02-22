@@ -9,6 +9,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script language="JavaScript" type="text/JavaScript" src="scripts/Sorter.js"></script>
     <script language="JavaScript" type="text/JavaScript" src="scripts/Research.js"></script>
+    <script language="JavaScript" type="text/JavaScript" src="scripts/Alert.js"></script>
     <script>
         $(document).ready(function(){
             $('[data-toggle="tooltip"]').tooltip();
@@ -24,24 +25,26 @@
             </div>
             <ul class="nav navbar-form navbar-right col-lg-3">
                 <div class="form-group has-feedback">
-                    <input type='text' id='research' class='form-control' onkeyup='Ricerca();' placeholder='cerca'>
+                    <input type='text' id='research' class='form-control' onkeyup='Ricerca();' placeholder='cerca' data-toggle='tooltip' data-placement='bottom' title='scrivi ciò che devi cercare nella tabella'>
                     <i class="glyphicon glyphicon-search form-control-feedback"></i>
                 </div>
             </ul>
         </div>
     </nav>
-<div class="container">
-    <h1 id="button"><button type="submit" class="btn success" data-toggle="tooltip" data-placement='bottom' title="premi il bottone per aggiungere un record"><span class="glyphicon glyphicon-plus"></span> Aggiungi un record</button></h1>
-    <br>
-    <table class="table table-hover" id="id_table">
-        <tr>
-            <th>id</th>
-            <th onclick="sorting(1);">Nome</th>
-            <th onclick="sorting(2);">Cognome</th>
-            <th onclick="sorting(3);">Email</th>
-            <th>Aggiorna</th>
-            <th>Elimina</th>
-        </tr>
+    <div class="container">
+        <h1 id="button"><button type="submit" class="btn success" data-toggle="tooltip" data-placement='bottom' title="premi il bottone per aggiungere un record"><span class="glyphicon glyphicon-plus"></span> Aggiungi un record</button></h1>
+        <span class="glyphicon glyphicon-info-sign" onmouseover="Info();" onmouseout="ResetInfo();"></span>
+        <br>
+        <p class="alert alert-info" id="info" style="visibility: hidden"></p>
+        <table class="table table-hover" id="id_table">
+            <tr>
+                <th>id</th>
+                <th onclick="sorting(1);">Nome</th>
+                <th onclick="sorting(2);">Cognome</th>
+                <th onclick="sorting(3);">Email</th>
+                <th>Aggiorna</th>
+                <th>Elimina</th>
+            </tr>
 </form>
 
 <?php
