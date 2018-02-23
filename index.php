@@ -25,7 +25,7 @@
             </div>
             <ul class="nav navbar-form navbar-right col-lg-3">
                 <div class="form-group has-feedback">
-                    <input type='text' id='research' class='form-control' onkeyup='Ricerca();' placeholder='cerca' data-toggle='tooltip' data-placement='bottom' title='scrivi ciò che devi cercare nella tabella'>
+                    <input type='text' id='research' class='form-control' onkeyup='Ricerca();' placeholder='Cerca...' data-toggle='tooltip' data-placement='bottom' title='Ricerca parole nella tabella'>
                     <i class="glyphicon glyphicon-search form-control-feedback"></i>
                 </div>
             </ul>
@@ -79,7 +79,6 @@ if ($result->num_rows > 0) {
         echo "</tr>";
     }
 }
-$control=false;
 echo "
 </table>
 </div>
