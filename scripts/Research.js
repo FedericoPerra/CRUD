@@ -7,11 +7,11 @@ function Ricerca()
         var celle = table.getElementsByTagName("td");
         for (var j = 0; j < celle.length; j++) {
             if (celle[j].innerHTML.toUpperCase().search(stringa) !== -1 && celle[j].innerHTML.toUpperCase().search("<") === -1) {
-                celle[j].style.backgroundColor = "yellow";
+                celle[j].style.backgroundColor = "#99ddff";
             }
         }
     }
-}
+}h
 
 function Reset() {
     var table = document.getElementById("id_table");

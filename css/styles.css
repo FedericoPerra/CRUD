@@ -11,4 +11,6 @@
 .success {background-color: #4CAF50;}
 .success:hover {background-color: #46a049;}
 
-.page-header{ height: 50px;}
+.page-header{height: 50px;}
+
+.col {color: #4cae4c;}

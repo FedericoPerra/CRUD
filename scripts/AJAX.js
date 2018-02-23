@@ -66,3 +66,14 @@ function CloseAddMenu(nome, cognome, email){
     xmlhttp.open("GET", "addRecord.php?nome="+nome+"&cognome="+cognome+"&email="+email, true);
     xmlhttp.send();
 }
+
+function Annulla(){
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("form").innerHTML = "";
+        }
+    };
+    xmlhttp.open("GET", "", true);
+    xmlhttp.send();
+}

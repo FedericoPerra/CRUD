@@ -5,12 +5,12 @@ $sql = "SELECT id, Nome, Cognome, Email FROM Credenziali";
 $result = $conn->query($sql);
 
 echo "<tr>
-    <th>id</th>
-    <th onclick=\"sorting(1);\">Nome</th>
-    <th onclick=\"sorting(2);\">Cognome</th>
-    <th onclick=\"sorting(3);\">Email</th>
-    <th>Aggiorna</th>
-    <th>Elimina</th>
+    <th bgcolor='yellow'>id</th>
+    <th bgcolor='yellow' onclick=\"sorting(1);\">Nome</th>
+    <th bgcolor='yellow' onclick=\"sorting(2);\">Cognome</th>
+    <th bgcolor='yellow' onclick=\"sorting(3);\">Email</th>
+    <th bgcolor='yellow'>Aggiorna</th>
+    <th bgcolor='yellow'>Elimina</th>
     </tr>";
 if ($result->num_rows > 0) {
 

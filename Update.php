@@ -9,7 +9,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div class="container" id="aggiorna">
+<div class="container col" id="aggiorna">
     <div class="page-header text-center">
         <h2>Modifica il record:</h2>
     </div>
@@ -28,9 +28,10 @@
             <label for="mail">Email:</label>
             <input type="email" class="form-control" name="Email" id="mail" value="<?php echo $_GET['email'];?>">
         </div>
-        <div class="form-group">
-            <label for="up">AGGIORNA:</label>
-            <input type="submit" class="form-control" id="up" onclick="InviaUpdate(document.getElementById('id').value,document.getElementById('nm').value,document.getElementById('cnm').value,document.getElementById('mail').value);">
+        <br>
+        <div class="btn-group-vertical">
+            <button type="submit" class="btn btn-success" id="insert" onclick="InviaUpdate(document.getElementById('id'),document.getElementById('nm').value,document.getElementById('cnm').value,document.getElementById('mail').value)"><span class="glyphicon glyphicon-ok"></span> Inserisci</button>
+            <button type="submit" class="btn btn-danger" onclick="Annulla();"><span class="glyphicon glyphicon-remove"></span> Annulla</button>
         </div>
     </div>
 </div>

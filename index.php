@@ -25,7 +25,7 @@
             </div>
             <div id="form">
             </div>
-            <ul class="nav navbar-form navbar-right col-lg-3">
+            <ul class="nav navbar-form navbar-right">
                 <div class="form-group has-feedback">
                     <input type='text' id='research' class='form-control' onkeyup='Ricerca();' placeholder='Cerca...' data-toggle='tooltip' data-placement='bottom' title='Ricerca parole nella tabella'>
                     <i class="glyphicon glyphicon-search form-control-feedback"></i>
@@ -34,7 +34,7 @@
         </div>
     </nav>
     <div class="container">
-        <h1 id="button"><button type="submit" class="btn success" data-toggle="tooltip" data-placement='bottom' title="premi il bottone per aggiungere un record" onclick="AddRecordMenu();"><span class="glyphicon glyphicon-plus"></span> Aggiungi un record</button></h1>
+        <h1 id="button"><button type="submit" class="btn success" onclick="AddRecordMenu();"><span class="glyphicon glyphicon-plus"></span> Aggiungi un record</button></h1>
         <span class="glyphicon glyphicon-info-sign" onmouseover="Info();" onmouseout="ResetInfo();"></span>
         <br>
         <p class="alert alert-info" id="info" style="visibility: hidden;"></p>
