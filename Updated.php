@@ -4,15 +4,16 @@ if(isSet($_GET['nome'])&&isSet($_GET['cognome'])&&isSet($_GET['email'])) {
         include("config.php");
         $nome = htmlentities(mysqli_escape_string($conn, $_GET['nome']));
         $cognome = htmlentities(mysqli_escape_string($conn, $_GET['cognome']));
-        if (!isValidWord($nome)&&!isValidWord($cognome)) {
+        if (!isValidWord($nome) && !isValidWord($cognome)) {
             $email = htmlentities(mysqli_escape_string($conn, $_GET['email']));
+            $id = $_GET['id'];
 
-            $sql = "INSERT INTO credenziali (Nome, Cognome, Email) VALUES ('$nome','$cognome','$email')";
+            $sql = "UPDATE credenziali SET Nome='$nome', Cognome='$cognome', Email='$email' WHERE id='$id'";
 
             if ($conn->query($sql) == TRUE) {
-                echo "<h2>New record created successfully</h2>";
+                echo "Record updated successfully";
             } else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
+                echo "Error updating record: " . $conn->error;
             }
 
             $conn->close();
@@ -49,5 +50,3 @@ function isValidWord($word){
 }
 
 ?>
-
-
