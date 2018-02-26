@@ -1,79 +1,36 @@
 function Selection(){
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("id_table").innerHTML = this.responseText;
-        }
-    };
-    xmlhttp.open("GET", "Select.php", true);
-    xmlhttp.send();
+    $("#id_table").load("Select.php");
 }
 
+
 function Updating(row, name, surname, mail){
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("form").innerHTML = this.responseText;
-        }
-    };
-    xmlhttp.open("GET", "Update.php?id="+row+"&nome="+name+"&cognome="+surname+"&email="+mail, true);
-    xmlhttp.send();
+    $("#form").load("Update.php?id="+row+"&nome="+name+"&cognome="+surname+"&email="+mail);
 }
 
 function InviaUpdate(id, nome, cognome, email){
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            //sistemare
-            document.getElementById("form").innerHTML="";
-            Selection();
-        }
-    };
-    xmlhttp.open("GET", "Updated.php?id="+id+"&nome="+nome+"&cognome="+cognome+"&email="+email, true);
-    xmlhttp.send();
+    $("#form").fadeTo("slow", 0);
+    $("#prova").load("Updated.php?id="+id+"&nome="+nome+"&cognome="+cognome+"&email="+email, function () {
+        Selection();
+    });
 }
 
 function Delete(id){
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            Selection();
-        }
-    };
-    xmlhttp.open("GET", "Delete.php?id=" + id, true);
-    xmlhttp.send();
+    $("#prova").load("Delete.php?id=" + id, function () {
+        Selection();
+    });
 }
 
 function AddRecordMenu(){
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("form").innerHTML = this.responseText;
-        }
-    };
-    xmlhttp.open("GET", "addRecordMenu.html", true);
-    xmlhttp.send();
+    $("#form").load("AddRecordMenu.html");
 }
 
 function CloseAddMenu(nome, cognome, email){
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("form").innerHTML = "";
-            Selection();
-        }
-    };
-    xmlhttp.open("GET", "addRecord.php?nome="+nome+"&cognome="+cognome+"&email="+email, true);
-    xmlhttp.send();
+    $("#form").text("");
+    $("#prova").load("addRecord.php?nome="+nome+"&cognome="+cognome+"&email="+email, function () {
+        Selection();
+    });
 }
 
 function Annulla(){
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("form").innerHTML = "";
-        }
-    };
-    xmlhttp.open("GET", "", true);
-    xmlhttp.send();
+    $("#form").text("");
 }

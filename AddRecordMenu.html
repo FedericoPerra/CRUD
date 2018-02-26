@@ -9,29 +9,29 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div class="container col">
-    <div class="page-header text-center">
-        <h2>Aggiungi un record:</h2>
+    <br>
+    <div class="page-header text-center col">
+    <h2>Aggiungi un record:</h2>
     </div>
-    <div class="container col-xs-8 col-lg-3">
-        <div class="form-group">
-            <label for="nm">Nome:</label>
-            <input type="text" class="form-control" name="name" id="nm" placeholder="Nome" required>
-        </div>
-        <div class="form-group">
-            <label for="cnm">Cognome:</label>
-            <input type="text" class="form-control" name="surname" id="cnm" placeholder="Cognome" required>
-        </div>
-        <div class="form-group">
-            <label for="mail">Email:</label>
-            <input type="email" class="form-control" name="Email" id="mail" placeholder="Email@example.com">
-        </div>
+    <div class="container col-lg-4 col">
+    <label for="nm">Nome:</label>
+    <input type="text" class="form-control" name="name" id="nm" placeholder="Nome" required>
+    </div>
+
+    <div class="container col-lg-4 col">
+    <label for="cnm">Cognome:</label>
+    <input type="text" class="form-control" name="surname" id="cnm" placeholder="Cognome" required>
+    </div>
+
+    <div class="container col-lg-4 col">
+    <label for="mail">Email:</label>
+    <input type="email" class="form-control" name="Email" id="mail" placeholder="Email@example.com">
+    </div>
+    <br>
+    <div class="container col-lg-3">
         <br>
-        <div class="btn-group-vertical">
-            <button type="submit" class="btn btn-success" id="insert" onclick="CloseAddMenu(document.getElementById('nm').value,document.getElementById('cnm').value,document.getElementById('mail').value)"><span class="glyphicon glyphicon-ok"></span> Inserisci</button>
-            <button type="submit" class="btn btn-danger" onclick="Annulla();"><span class="glyphicon glyphicon-remove"></span> Annulla </button>
-        </div>
+        <button type="submit" class="btn btn-success" id="insert" onclick="CloseAddMenu($('#nm').val(), $('#cnm').val(),$('#mail').val())"><span class="glyphicon glyphicon-ok"></span> Inserisci</button>
+        <button type="submit" class="btn btn-danger" onclick="Annulla();"><span class="glyphicon glyphicon-remove"></span> Annulla </button>
     </div>
-</div>
 </body>
 </html>

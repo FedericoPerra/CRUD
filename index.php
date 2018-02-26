@@ -11,11 +11,6 @@
     <script language="JavaScript" type="text/JavaScript" src="scripts/Research.js"></script>
     <script language="JavaScript" type="text/JavaScript" src="scripts/Alert.js"></script>
     <script language="JavaScript" type="text/JavaScript" src="scripts/AJAX.js"></script>
-    <script>
-        $(document).ready(function(){
-            $('[data-toggle="tooltip"]').tooltip();
-        });
-    </script>
 </head>
 <body onload="Selection();">
     <nav class="navbar navbar-inverse" id="navigation">
@@ -25,12 +20,14 @@
             </div>
             <div id="form">
             </div>
+            <div class="container">
             <ul class="nav navbar-form navbar-right">
                 <div class="form-group has-feedback">
-                    <input type='text' id='research' class='form-control' onkeyup='Ricerca();' placeholder='Cerca...' data-toggle='tooltip' data-placement='bottom' title='Ricerca parole nella tabella'>
+                    <input type='text' id='research' class='form-control' onkeyup='Ricerca();' placeholder='Cerca...'>
                     <i class="glyphicon glyphicon-search form-control-feedback"></i>
                 </div>
             </ul>
+            </div>
         </div>
     </nav>
     <div class="container">
@@ -41,5 +38,6 @@
         <table class="table table-hover" id="id_table">
         </table>
     </div>
+    <p id="prova" class="hidden"></p>
 </body>
 </html>
