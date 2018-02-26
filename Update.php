@@ -32,7 +32,7 @@
 
     <div class="container col-lg-4 col">
         <br>
-        <button type="submit" class="btn btn-success" id="insert" onclick="InviaUpdate($('#id').val(), $('#nm').val(), $('#cnm').val(),$('#mail').val())"><span class="glyphicon glyphicon-ok"></span> Inserisci</button>
+        <button type="submit" class="btn btn-success" id="insert" onclick="InviaUpdate($('#id').val(), $('#nm').val(), $('#cnm').val(),$('#mail').val());"><span class="glyphicon glyphicon-ok"></span> Inserisci</button>
         <button type="submit" class="btn btn-danger" onclick="Annulla();"><span class="glyphicon glyphicon-remove"></span> Annulla</button>
     </div>
 </body>

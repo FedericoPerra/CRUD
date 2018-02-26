@@ -32,7 +32,7 @@
     </nav>
     <div class="container">
         <h1 id="button"><button type="submit" class="btn success" onclick="AddRecordMenu();"><span class="glyphicon glyphicon-plus"></span> Aggiungi un record</button></h1>
-        <span class="glyphicon glyphicon-info-sign" onmouseover="Info();" onmouseout="ResetInfo();"></span>
+        <span class="glyphicon glyphicon-info-sign" onmouseover="info();" onmouseout="resetInfo();"></span>
         <br>
         <p class="alert alert-info" id="info" style="visibility: hidden;"></p>
         <table class="table table-hover" id="id_table">

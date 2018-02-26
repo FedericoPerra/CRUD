@@ -8,8 +8,8 @@ function Updating(row, name, surname, mail){
 }
 
 function InviaUpdate(id, nome, cognome, email){
-    $("#form").fadeTo("slow", 0);
     $("#prova").load("Updated.php?id="+id+"&nome="+nome+"&cognome="+cognome+"&email="+email, function () {
+        $("#form").text("");
         Selection();
     });
 }
@@ -33,4 +33,8 @@ function CloseAddMenu(nome, cognome, email){
 
 function Annulla(){
     $("#form").text("");
+}
+
+function alert(msg){
+    alert(msg);
 }
