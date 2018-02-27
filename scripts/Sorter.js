@@ -1,6 +1,6 @@
 function sorting(value){
     var table, rows, switching, i, x, y, shouldSwitch;
-    table = document.getElementById("id_table");
+    table = $("#id_table");
     switching = true;
 
     while (switching) {
