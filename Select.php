@@ -1,4 +1,5 @@
 <?php
+//creazione connessione
 include("config.php");
 
 $sql = "SELECT id, Nome, Cognome, Email FROM Credenziali";
@@ -24,12 +25,12 @@ if ($result->num_rows > 0) {
         $email=$row['Email'];
 
         echo "<tr>";
-        echo "<td>".$row['id']."</td>";
-        echo "<td onclick='sorting(1);'>".$row['Nome']."</td>";
-        echo "<td onclick='sorting(2);'>".$row['Cognome']."</td>";
-        echo "<td onclick='sorting(3);'>".$row['Email']."</td>";
-        echo "<td><button type='submit' class='btn btn-primary' name='btnUpdate' data-toggle='modal' data-target='#myModal' onclick='Updator(\"$riga\",\"$nome\",\"$cognome\",\"$email\");'><span class='glyphicon glyphicon-pencil'></span> Aggiorna</button></td>";
-        echo "<td><button type='submit' class='btn btn-danger' name='btnDelete' onclick='Delete(\"$riga\");'><span class='glyphicon glyphicon-remove'></span> Elimina</button></td>";
+        echo "<td>".$riga."</td>";
+        echo "<td onclick='sorting(1);'>".$nome."</td>";
+        echo "<td onclick='sorting(2);'>".$cognome."</td>";
+        echo "<td onclick='sorting(3);'>".$email."</td>";
+        echo "<td><button type='submit' class='btn btn-primary' name='btnUpdate' data-toggle='modal' data-target='#myModal' onclick='formAggiorna(\"$riga\",\"$nome\",\"$cognome\",\"$email\");'><span class='glyphicon glyphicon-pencil'></span> Aggiorna</button></td>";
+        echo "<td><button type='submit' class='btn btn-danger' name='btnDelete' onclick='cancella(\"$riga\");'><span class='glyphicon glyphicon-remove'></span> Elimina</button></td>";
         echo "</tr>";
     }
 }

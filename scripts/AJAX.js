@@ -4,7 +4,7 @@ function selection(){
     $("#id_table").fadeIn(1000);
 }
 
-function InviaUpdate(id, nome, cognome, email) {
+function update(id, nome, cognome, email) {
     if (isValidEmail(email)) {  //controllo dell'email
         $("#prova").load("Updated.php?id=" + id + "&nome=" + nome + "&cognome=" + cognome + "&email=" + email, function () {
             $("#error").hide();
@@ -18,15 +18,15 @@ function InviaUpdate(id, nome, cognome, email) {
     }
 }
 
-function Delete(id){
-    $("#prova").load("Delete.php?id=" + id, function () {
+function cancella(id){
+    $("#prova").load("cancella.php?id=" + id, function () {
         selection();
     });
 }
 
-function AddRecord(nome, cognome, email){
+function aggiungi(nome, cognome, email){
     if(isValidEmail(email)){
-        $("#prova").load("addRecord.php?nome=" + nome + "&cognome=" + cognome + "&email=" + email, function () {
+        $("#prova").load("AddRecord.php?nome=" + nome + "&cognome=" + cognome + "&email=" + email, function () {
             selection();
             $("#error").hide();
         });
@@ -38,7 +38,7 @@ function AddRecord(nome, cognome, email){
     }
 }
 
-function Annulla(){
+function annulla(){
     $("#error").hide();
 }
 
@@ -48,21 +48,33 @@ function isValidEmail(email){
     return pattern.test(email);
 }
 
-function Updator(id, nome, cognome, email){
+function formAggiorna(id, nome, cognome, email){
     $("#insert").unbind();
     $("#titolo").text("Modifica un record");
     $("#nm").val(nome);
     $("#cnm").val(cognome);
     $("#mail").val(email);
     $("#insert").click(function(){
-        InviaUpdate(id, $('#nm').val(), $('#cnm').val(),$('#mail').val());
+        update(id, $('#nm').val(), $('#cnm').val(),$('#mail').val());
     });
 }
 
-function Adder(){
+function formAggiungi(){
     $("#insert").unbind();
     $("#titolo").text("Aggiungi un record");
     $("#insert").click(function(){
-        AddRecord($('#nm').val(), $('#cnm').val(),$('#mail').val());
+        aggiungi($('#nm').val(), $('#cnm').val(),$('#mail').val());
     });
+}
+
+function info() {
+    //imposta il contenuto del paragrafo info sull'evento onmouseover
+    $('#info').show();
+    $('#info').text('Se vuoi ordinare alfabeticamente la tabella in base ad un campo, premi sulla rispettiva colonna');
+}
+
+function resetInfo(){
+    //cancella il contenuto del paragrafo info sull'evento onmouseout
+    $('#info').hide();
+    $('#info').text('');
 }

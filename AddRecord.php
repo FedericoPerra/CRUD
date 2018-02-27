@@ -1,4 +1,5 @@
 <?php
+//creazione connessione
 if(isSet($_GET['nome'])&&isSet($_GET['cognome'])&&isSet($_GET['email'])) {
     include("config.php");
     $nome = htmlentities(mysqli_escape_string($conn, $_GET['nome']));

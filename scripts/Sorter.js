@@ -1,6 +1,7 @@
 function sorting(value){
+    //ordinamento alfabetico
     var table, rows, switching, i, x, y, shouldSwitch;
-    table = $("#id_table");
+    table = document.getElementById("id_table");
     switching = true;
 
     while (switching) {

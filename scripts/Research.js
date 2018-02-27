@@ -1,5 +1,6 @@
 function Ricerca()
 {
+    //colora le celle dove trova la stringa passata
     Reset();
     var stringa = document.getElementById("research").value.toUpperCase();
     if(stringa!="") {
@@ -14,6 +15,7 @@ function Ricerca()
 }
 
 function Reset() {
+    //imposta tutte le celle al colore bianco
     var table = document.getElementById("id_table");
     var celle = table.getElementsByTagName("td");
     for(var j=0; j<celle.length; j++){

@@ -1,4 +1,5 @@
 <?php
+//creazione connessione
 include("config.php");
 
 $id=$_GET['id'];

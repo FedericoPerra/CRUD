@@ -9,7 +9,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script language="JavaScript" type="text/JavaScript" src="scripts/Sorter.js"></script>
     <script language="JavaScript" type="text/JavaScript" src="scripts/Research.js"></script>
-    <script language="JavaScript" type="text/JavaScript" src="scripts/Alert.js"></script>
     <script language="JavaScript" type="text/JavaScript" src="scripts/AJAX.js"></script>
 </head>
 <body onload="selection();">
@@ -30,7 +29,7 @@
         </div>
     </nav>
     <div class="container" style="align-right" id="mostra">
-        <h1 id="btnAdd"><button type="submit" class="btn success" data-toggle="modal" data-target="#myModal" onclick="Adder();"><span class="glyphicon glyphicon-plus"></span> Aggiungi un record</button></h1>
+        <h1 id="btnAdd"><button type="submit" class="btn success" data-toggle="modal" data-target="#myModal" onclick="formAggiungi();"><span class="glyphicon glyphicon-plus"></span> Aggiungi un record</button></h1>
         <!-- form modale per Aggiungi-->
         <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog">
@@ -54,7 +53,7 @@
                         <br>
                         <br>
                         <button type="button" class="btn btn-success" id="insert" data-dismiss="modal"><span class="glyphicon glyphicon-ok"></span> Inserisci</button>
-                        <button type="button" class="btn btn-danger" id="annulla" onclick="Annulla();" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Annulla </button>
+                        <button type="button" class="btn btn-danger" id="annulla" onclick="annulla();" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Annulla </button>
                         <p class="alert alert-danger" id="error" hidden></p>
                     </div>
                 </div>
