@@ -19,7 +19,7 @@ function update(id, nome, cognome, email) {
 }
 
 function cancella(id){
-    $("#prova").load("cancella.php?id=" + id, function () {
+    $("#prova").load("Delete.php?id=" + id, function () {
         selection();
     });
 }
