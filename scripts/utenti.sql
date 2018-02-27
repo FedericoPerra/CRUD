@@ -36,16 +36,6 @@ CREATE TABLE `credenziali` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dump dei dati per la tabella `credenziali`
---
-
-INSERT INTO `credenziali` (`id`, `Nome`, `Cognome`, `Email`) VALUES
-(33, 'Andrea', 'Pesaresi', 'andreapesafifa@gmail.com'),
-(34, 'Federico', 'Perra', 'federicoperra8@gmail.com'),
-(37, 'Dario', 'Giovannini', 'dario0giovannini@gmail.com'),
-(39, 'Vincenzo', 'Magliozzi', 'vincenzo.magliozzi@gmail.com');
-
---
 -- Indici per le tabelle scaricate
 --
 
